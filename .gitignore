@@ -1,0 +1,9 @@
+/ear/target/
+/ejb/target/
+/war/target/
+/launcher/nbproject/
+/launcher/test-gf
+/war-ext/target/
+/api/target/
+/launcher/target/
+lucene
