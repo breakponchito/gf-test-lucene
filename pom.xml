@@ -45,7 +45,7 @@
 
     <appserver.groupId>fish.payara.extras</appserver.groupId>
     <appserver.artifactId>payara-embedded-all</appserver.artifactId>
-    <appserver.version>6.2023.9</appserver.version>
+    <appserver.version>6.2023.10</appserver.version>
     
   </properties>
   <build>
@@ -76,17 +76,12 @@
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.3.0</version>
           <configuration>
-            <!-- for reproductible builds: multiple compilations of the same
-                 content will result in the same JAR -->
             <outputTimestamp>2020-01-01T00:00:00-00:00</outputTimestamp>
           </configuration>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>exec-maven-plugin</artifactId>
-          <!-- version 3.1.0 breaks the run-server.sh script because of dependency
-               issues during the bootstrap of the server
-               https://github.com/mojohaus/exec-maven-plugin/issues/322 -->
           <version>3.0.0</version>
         </plugin>
         <plugin>
@@ -300,9 +295,6 @@
         <version>4.1.2</version>
       </dependency>
       
-      <!-- Embedded application server -->
-      <!-- To put generally as the last dependency to avoid classpath conflicts
-           especially with H2 -->
       <dependency>
         <groupId>${appserver.groupId}</groupId>
         <artifactId>${appserver.artifactId}</artifactId>
