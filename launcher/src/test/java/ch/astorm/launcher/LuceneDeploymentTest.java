@@ -23,6 +23,10 @@ import org.junit.Test;
 public class LuceneDeploymentTest {
     @Test
     public void testHibernate62Deployment() throws Exception {
+        //mapped in the pom.xml ear by the variable ${ch.astorm.root} and
+        //defined in the embedded domain.xml as system property
+        String dynRoot = "root";
+
         File rootDir = new File("test-gf");
         if(rootDir.exists()) { FileUtils.cleanDirectory(rootDir); }
         
@@ -72,7 +76,7 @@ public class LuceneDeploymentTest {
         assertNotNull("EAR deployment has failed", earDepName);
         
         try(CloseableHttpClient client = HttpClientBuilder.create().build()) {
-            try(CloseableHttpResponse response = client.execute(new HttpGet("http://localhost:8080/sample-war/"))) {
+            try(CloseableHttpResponse response = client.execute(new HttpGet("http://localhost:8080/"+dynRoot))) {
                 assertEquals(response.getStatusLine().getStatusCode()+": "+response.getStatusLine().getReasonPhrase(), 200, response.getStatusLine().getStatusCode());
 
                 String responseStr;
@@ -82,7 +86,7 @@ public class LuceneDeploymentTest {
                 }
             }
             
-            try(CloseableHttpResponse response = client.execute(new HttpGet("http://localhost:8080/sample-war?query=3"))) {
+            try(CloseableHttpResponse response = client.execute(new HttpGet("http://localhost:8080/"+dynRoot+"?query=3"))) {
                 assertEquals(response.getStatusLine().getStatusCode()+": "+response.getStatusLine().getReasonPhrase(), 200, response.getStatusLine().getStatusCode());
 
                 String responseStr;

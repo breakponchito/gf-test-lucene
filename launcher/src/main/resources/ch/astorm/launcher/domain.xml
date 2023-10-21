@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <domain log-root="${EDMS_ROOT}/payara-logs" application-root="${com.sun.aas.instanceRoot}/applications" version="10.0">
+  <system-property name="ch.astorm.root" value="root" />
   <hazelcast-runtime-configuration start-port="5900" das-port="4900" auto-increment-port="true"></hazelcast-runtime-configuration>
   <security-configurations>
     <authentication-service default="true" name="adminAuth" use-password-credential="true">

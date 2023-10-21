@@ -22,7 +22,7 @@
             <webModule>
               <groupId>ch.astorm.gf-embedded</groupId>
               <artifactId>war</artifactId>
-              <contextRoot>/sample-war</contextRoot>
+              <contextRoot>/${ch.astorm.root}</contextRoot>
               <bundleFileName>sample-war.war</bundleFileName>
             </webModule>
             <ejbModule>
