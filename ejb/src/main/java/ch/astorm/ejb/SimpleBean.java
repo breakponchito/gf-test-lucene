@@ -3,12 +3,12 @@ package ch.astorm.ejb;
 
 import ch.astorm.api.SimpleBeanRemote;
 import ch.astorm.ejb.entities.Leaf;
-import jakarta.annotation.PostConstruct;
-import jakarta.ejb.LocalBean;
-import jakarta.ejb.Remote;
-import jakarta.ejb.Stateless;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
+import javax.annotation.PostConstruct;
+import javax.ejb.LocalBean;
+import javax.ejb.Remote;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.io.File;
 import java.nio.file.Paths;
 import org.apache.lucene.analysis.en.EnglishAnalyzer;

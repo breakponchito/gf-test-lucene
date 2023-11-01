@@ -16,7 +16,7 @@
     <!--
       Java EE version
     -->
-    <javaee.version>10.0.0</javaee.version>
+    <javaee.version>8.0.0</javaee.version>
     <javaee.ear.version>10</javaee.ear.version>
     
     <!--
@@ -45,7 +45,7 @@
 
     <appserver.groupId>fish.payara.extras</appserver.groupId>
     <appserver.artifactId>payara-embedded-all</appserver.artifactId>
-    <appserver.version>6.2023.10</appserver.version>
+    <appserver.version>5.57.0-SNAPSHOT</appserver.version>
     
   </properties>
   <build>
